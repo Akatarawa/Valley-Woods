@@ -46,7 +46,21 @@
             padding: 1.5rem 2rem;
         }
 
-        .logo {
+        .brand-logo-img {
+    height: 50px;       /* Adjust this number to make your logo taller or shorter on the screen */
+    width: auto;        /* This ensures your logo maintains its natural proportions without squishing */
+    display: block;
+    max-width: 100%;    /* Safeguards responsiveness on mobile phones */
+    object-fit: contain;
+}
+
+/* Optional alignment fix to keep your logo running inline with menu links */
+.logo a {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+}
+		.logo {
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--primary);
