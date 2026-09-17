@@ -148,18 +148,24 @@
        .product-image-placeholder {
     position: relative;
     width: 100%;
-    height: 280px; /* This locks the height so all your cards line up perfectly */
-    overflow: hidden;
-    background-color: #f7f5f2;
+    height: 280px; 
+    overflow: hidden; /* This acts like a frame, cleanly cutting off any overflow when we scale the photo up */
+    background-color: #fcfbfa; /* Matches your site background */
     border-radius: 4px 4px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .product-image {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* This makes your vertical photo scale and center perfectly without warping */
-    object-position: center;
+    object-fit: contain; /* Keeps the entire vertical shape uncropped initially */
+    object-position: center; /* Locks the heart board dead-center in the frame */
     display: block;
+    
+    /* ZOOM FACTOR: 1.2 makes the item 20% larger. Change to 1.3 or 1.4 if you want it even bigger! */
+    transform: scale(1.2); 
 }
 
         .tag {
