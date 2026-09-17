@@ -145,17 +145,22 @@
             box-shadow: 0 10px 20px rgba(74, 55, 40, 0.05);
         }
 
-        .product-image-placeholder {
-            width: 100%;
-            height: 240px;
-            background-color: #eae3dc;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary-light);
-            font-weight: 500;
-            position: relative;
-        }
+       .product-image-placeholder {
+    position: relative;
+    width: 100%;
+    height: 280px; /* This locks the height so all your cards line up perfectly */
+    overflow: hidden;
+    background-color: #f7f5f2;
+    border-radius: 4px 4px 0 0;
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This makes your vertical photo scale and center perfectly without warping */
+    object-position: center;
+    display: block;
+}
 
         .tag {
             position: absolute;
