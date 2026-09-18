@@ -1,0 +1,79 @@
+<html lang="en-NZ">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live-Edge Serving Board - Valley Woods</title>
+    <!-- Load matching fonts -->
+    <link href="https://googleapis.com" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #fcfbfa; color: #2c2520; margin: 0; padding: 40px 20px; }
+        .back-nav { max-width: 1100px; margin: 0 auto 30px auto; }
+        .back-nav a { color: #7a6e65; text-decoration: none; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .product-container { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+        
+        /* Multiple Image Gallery Styles */
+        .gallery-main { width: 100%; height: 450px; overflow: hidden; border-radius: 4px; background: #fcfbfa; display: flex; justify-content: center; align-items: center; }
+        .gallery-main img { width: 100%; height: 100%; object-fit: contain; transform: scale(1.2); }
+        .gallery-thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 15px; }
+        .gallery-thumbs img { width: 100%; height: 80px; object-fit: cover; border-radius: 2px; cursor: pointer; border: 1px solid transparent; }
+        .gallery-thumbs img:hover { border-color: #4a3329; }
+        
+        /* Deep Content Styles */
+        h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #4a3329; margin: 0 0 10px 0; }
+        .price { font-size: 1.5rem; font-weight: 600; color: #4a3329; margin-bottom: 20px; display: block; }
+        .description { line-height: 1.8; color: #4a3329; font-size: 1.05rem; }
+        .spec-list { margin: 25px 0; padding: 0; list-style: none; border-top: 1px solid #e8e5e0; border-bottom: 1px solid #e8e5e0; padding: 15px 0; }
+        .spec-list li { margin-bottom: 8px; font-size: 0.95rem; color: #6e655f; }
+        .spec-list strong { color: #2c2520; }
+        .btn-buy { display: inline-block; background-color: #4a3329; color: white; text-decoration: none; padding: 15px 40px; font-weight: bold; border-radius: 4px; text-align: center; }
+        .btn-buy:hover { background-color: #31211a; }
+        
+        @media (max-width: 768px) { .product-container { grid-template-columns: 1fr; gap: 30px; } }
+    </style>
+</head>
+<body>
+
+    <nav class="back-nav">
+        <!-- Uses ../ to step out of the products folder back to the main homepage -->
+        <a href="../index.html">← Back to Collection</a>
+    </nav>
+
+    <main class="product-container">
+        <!-- Left Column: Visual Assets -->
+        <section>
+            <div class="gallery-main">
+                <img id="mainImage" src="../images/Seoul.jpg" alt="Live-Edge Serving Board Main View">
+            </div>
+            <!-- Thumbnails grid for detailed alternate grain closeups -->
+            <div class="gallery-thumbs">
+                <img src="../images/Seoul.jpg" alt="View 1" onclick="document.getElementById('mainImage').src=this.src">
+                <img src="../images/board-angle2.jpg" alt="View 2" onclick="document.getElementById('mainImage').src=this.src">
+                <img src="../images/board-grain-detail.jpg" alt="View 3" onclick="document.getElementById('mainImage').src=this.src">
+                <img src="../images/board-back.jpg" alt="View 4" onclick="document.getElementById('mainImage').src=this.src">
+            </div>
+        </section>
+
+        <!-- Right Column: Text Storytelling & Checkout -->
+        <section>
+            <h1>Live-Edge Serving Board</h1>
+            <span class="price">$145 NZD</span>
+            
+            <div class="description">
+                <p>This statement serving board is built to anchor your table settings. Hand-shaped from a premium single slab of salvage Black Walnut timber, we preserved the live Cambium edge configuration along the flank to maintain the tree's natural silhouette.</p>
+                <p>Perfectly balanced for presenting artisan cheeses, charcuterie arrays, or crusty sourdough loaves, the timber has been seasoned for months before undergoing rigorous hand-sanding down to an incredibly silky-smooth touch layout.</p>
+            </div>
+
+            <ul class="spec-list">
+                <li><strong>Timber Species:</strong> Salvaged New Zealand Black Walnut</li>
+                <li><strong>Dimensions:</strong> Approx. 450mm x 220mm x 25mm</li>
+                <li><strong>Finish:</strong> Submerged in pure food-grade mineral oil, sealed with organic New Zealand beeswax</li>
+                <li><strong>Care Rules:</strong> Hand wash only. Re-wax every 3 to 6 months.</li>
+            </ul>
+
+            <!-- Your specific single-item PayPal Checkout link drops here -->
+            <a href="https://paypal.com" target="_blank" class="btn-buy">Purchase This Piece</a>
+        </section>
+    </main>
+
+</body>
+</html>
