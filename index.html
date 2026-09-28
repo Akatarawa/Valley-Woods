@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valley Woods | Handcrafted Wooden Goods, Made to Last</title>
+<meta name="description" content="Valley Woods creates handcrafted wooden serving boards, bowls, coasters and custom pieces from sustainably sourced hardwood. Made by hand, built to last generations.">
+<meta name="theme-color" content="#3A2A21">
+
+<!-- Open Graph / social preview -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Valley Woods | Handcrafted Wooden Goods">
+<meta property="og:description" content="Sustainably sourced, hand-finished wooden goods for everyday living — serving boards, bowls, coasters and custom pieces.">
+<meta property="og:image" content="assets/og-image.jpg">
+
+<!-- Favicon (inline SVG, no external file needed) -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%233A2A21'/%3E%3Cpath d='M30 65 Q50 20 70 65 Q50 80 30 65Z' fill='%23D9A566'/%3E%3Cline x1='50' y1='30' x2='50' y2='72' stroke='%233A2A21' stroke-width='2'/%3E%3C/svg%3E">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Tailwind CSS (CDN build, configured to use our palette + fonts) -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          cream:   '#FAF7F2',
+          paper:   '#FDFBF9',
+          sand:    '#F2ECE1',
+          line:    '#E3D8CB',
+          bark:    '#2C221E',
+          walnut:  '#3A2A21',
+          coffee:  '#5A483C',
+          amber:   '#8C5E3C',
+          amberDk: '#6E482D',
+          gold:    '#D9A566',
+        },
+        fontFamily: {
+          serif: ['"Playfair Display"', 'serif'],
+          sans:  ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { scrollbar-gutter: stable; }
+
+  /* Reusable "wood grain" placeholder artwork used until real product
+     photography is available. Swap any .wood-swatch <div> for a real
+     <img> tag — see the README for exactly how. */
+  .wood-swatch {
+    position: relative;
+    background: linear-gradient(135deg, var(--tone-a, #C8A272), var(--tone-b, #8C5E3C));
+    overflow: hidden;
+  }
+  .wood-swatch::before {
+    content: "";
+    position: absolute;
+    inset: -20%;
+    background-image: repeating-linear-gradient(
+      100deg,
+      rgba(44,34,30,0.10) 0px,
+      rgba(44,34,30,0.10) 2px,
+      transparent 3px,
+      transparent 14px
+    );
+    mix-blend-mode: multiply;
+    transform: rotate(-3deg);
+  }
+  .wood-swatch::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(120% 90% at 30% 20%, rgba(255,255,255,0.25), transparent 60%);
+  }
+
+  .skip-link:focus {
+    transform: translateY(0);
+  }
+
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+  details[open] .faq-chevron { transform: rotate(180deg); }
+
+  .nav-underline {
+    position: relative;
+  }
+  .nav-underline::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: -6px;
+    height: 2px;
+    background: #8C5E3C;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .2s ease;
+  }
+  .nav-underline:hover::after { transform: scaleX(1); }
+</style>
+</head>
+
+<body class="bg-cream text-bark font-sans antialiased">
+
+<a href="#main" class="skip-link sr-only focus:not-sr-only fixed top-2 left-2 z-[100] bg-walnut text-white text-sm px-4 py-2 rounded -translate-y-16 focus:translate-y-0 transition">Skip to main content</a>
+
+<!-- ============ HEADER / NAVIGATION ============ -->
+<header class="sticky top-0 bg-cream/95 backdrop-blur-sm border-b border-line z-50">
+  <div class="max-w-6xl mx-auto px-6 py-3 flex justify-between items-center">
+
+    <a href="#" class="flex items-center gap-2.5" aria-label="Valley Woods home">
+      <svg width="36" height="36" viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="48" fill="#3A2A21"/>
+        <path d="M30 65 Q50 20 70 65 Q50 80 30 65Z" fill="#D9A566"/>
+        <line x1="50" y1="30" x2="50" y2="72" stroke="#3A2A21" stroke-width="2"/>
+      </svg>
+      <span class="text-2xl font-serif font-bold tracking-tight text-walnut">VALLEY WOODS</span>
+    </a>
+
+    <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-coffee" aria-label="Primary">
+      <a href="#products" class="nav-underline hover:text-amber transition">Shop Collection</a>
+      <a href="#process" class="nav-underline hover:text-amber transition">Our Craft</a>
+      <a href="#testimonials" class="nav-underline hover:text-amber transition">Reviews</a>
+      <a href="#faq" class="nav-underline hover:text-amber transition">FAQ</a>
+      <a href="#contact" class="nav-underline hover:text-amber transition">Custom Orders</a>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <a href="#products" class="hidden sm:inline-block bg-walnut text-white px-5 py-2.5 rounded-md text-sm font-medium hover:bg-coffee transition">
+        Browse Goods
+      </a>
+      <!-- Mobile menu toggle -->
+      <button id="menuBtn" type="button" class="md:hidden p-2 text-walnut" aria-expanded="false" aria-controls="mobileMenu" aria-label="Toggle menu">
+        <svg id="menuIconOpen" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg id="menuIconClose" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="hidden"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile nav panel -->
+  <nav id="mobileMenu" class="md:hidden hidden border-t border-line bg-cream" aria-label="Mobile">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-4 text-coffee font-medium">
+      <a href="#products" class="hover:text-amber">Shop Collection</a>
+      <a href="#process" class="hover:text-amber">Our Craft</a>
+      <a href="#testimonials" class="hover:text-amber">Reviews</a>
+      <a href="#faq" class="hover:text-amber">FAQ</a>
+      <a href="#contact" class="hover:text-amber">Custom Orders</a>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="relative bg-paper border-b border-line overflow-hidden">
+    <div class="absolute inset-0 z-0 opacity-[0.08] wood-swatch" style="--tone-a:#C8A272;--tone-b:#5A483C;" aria-hidden="true"></div>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-6 py-24 md:py-32 text-center">
+      <span class="text-xs uppercase tracking-widest text-amber font-semibold">Sustainably Sourced &amp; Handcrafted in Small Batches</span>
+      <h1 class="text-4xl md:text-6xl font-serif font-bold text-bark mt-4 mb-6 leading-tight">
+        Timeless Wooden Goods,<br class="hidden sm:inline"> Made by Hand for Everyday Living
+      </h1>
+      <p class="text-lg text-coffee max-w-2xl mx-auto mb-10">
+        Every Valley Woods piece is shaped from premium hardwood, honoring the natural grain
+        and finished to last for generations — not seasons.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#products" class="inline-block bg-amber text-white px-8 py-3.5 rounded-md font-medium text-lg hover:bg-amberDk transition shadow-md">
+          Shop Handcrafted Goods
+        </a>
+        <a href="#contact" class="inline-block bg-transparent text-walnut border border-walnut/30 px-8 py-3.5 rounded-md font-medium text-lg hover:bg-white transition">
+          Request a Custom Piece
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TRUST / VALUE STRIP ============ -->
+  <section class="border-b border-line bg-cream">
+    <div class="max-w-6xl mx-auto px-6 py-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <div>
+        <p class="text-2xl mb-1" aria-hidden="true">🌳</p>
+        <p class="text-sm font-semibold text-walnut">Sustainably Sourced</p>
+        <p class="text-xs text-coffee mt-1">Local &amp; reclaimed hardwood</p>
+      </div>
+      <div>
+        <p class="text-2xl mb-1" aria-hidden="true">✋</p>
+        <p class="text-sm font-semibold text-walnut">Hand-Finished</p>
+        <p class="text-xs text-coffee mt-1">No two pieces alike</p>
+      </div>
+      <div>
+        <p class="text-2xl mb-1" aria-hidden="true">🛢️</p>
+        <p class="text-sm font-semibold text-walnut">Food-Safe Oils</p>
+        <p class="text-xs text-coffee mt-1">Natural, non-toxic finish</p>
+      </div>
+      <div>
+        <p class="text-2xl mb-1" aria-hidden="true">📦</p>
+        <p class="text-sm font-semibold text-walnut">Made to Order</p>
+        <p class="text-xs text-coffee mt-1">Shipped with care, NZ-wide</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURED PRODUCTS ============ -->
+  <section id="products" class="max-w-6xl mx-auto px-6 py-20">
+    <div class="text-center mb-12">
+      <span class="text-xs uppercase tracking-widest text-amber font-semibold">The Collection</span>
+      <h2 class="text-3xl font-serif font-bold text-bark mt-2">Handcrafted, One Board at a Time</h2>
+      <p class="text-coffee mt-2 max-w-xl mx-auto">Each piece is unique — finished by hand with food-safe natural oils.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Product template note (see README "Adding real product photos"):
+           Replace the .wood-swatch <div> below with:
+           <img src="assets/products/your-photo.jpg" alt="Description" class="w-full h-full object-cover">
+      -->
+
+      <article class="bg-white rounded-lg overflow-hidden border border-line shadow-sm flex flex-col justify-between transition hover:shadow-lg hover:-translate-y-0.5">
+        <div class="p-6">
+          <div class="wood-swatch aspect-[4/3] rounded-md mb-4" style="--tone-a:#C8926B;--tone-b:#6E482D;" role="img" aria-label="Live-edge walnut serving board"></div>
+          <h3 class="text-xl font-serif font-bold mb-2">Live-Edge Walnut Board</h3>
+          <p class="text-sm text-coffee mb-4">Carved from solid black walnut with a natural live edge. Perfect for charcuterie and entertaining.</p>
+          <div class="text-lg font-bold text-bark">$85.00 NZD</div>
+        </div>
+        <div class="p-6 pt-0">
+          <a href="#contact" class="block text-center bg-walnut text-white py-2.5 rounded hover:bg-coffee transition text-sm font-medium">Enquire to Buy</a>
+        </div>
+      </article>
+
+      <article class="bg-white rounded-lg overflow-hidden border border-line shadow-sm flex flex-col justify-between transition hover:shadow-lg hover:-translate-y-0.5">
+        <div class="p-6">
+          <div class="wood-swatch aspect-[4/3] rounded-md mb-4" style="--tone-a:#D8B27E;--tone-b:#8C5E3C;" role="img" aria-label="Hand-turned oak bowl"></div>
+          <h3 class="text-xl font-serif font-bold mb-2">Hand-Turned Oak Bowl</h3>
+          <p class="text-sm text-coffee mb-4">Lathe-turned from reclaimed white oak with a smooth finish that highlights natural grain.</p>
+          <div class="text-lg font-bold text-bark">$120.00 NZD</div>
+        </div>
+        <div class="p-6 pt-0">
+          <a href="#contact" class="block text-center bg-walnut text-white py-2.5 rounded hover:bg-coffee transition text-sm font-medium">Enquire to Buy</a>
+        </div>
+      </article>
+
+      <article class="bg-white rounded-lg overflow-hidden border border-line shadow-sm flex flex-col justify-between transition hover:shadow-lg hover:-translate-y-0.5">
+        <div class="p-6">
+          <div class="wood-swatch aspect-[4/3] rounded-md mb-4" style="--tone-a:#E4C9A0;--tone-b:#A9744F;" role="img" aria-label="Maple and cherry coaster set"></div>
+          <h3 class="text-xl font-serif font-bold mb-2">Maple &amp; Cherry Coaster Set</h3>
+          <p class="text-sm text-coffee mb-4">Set of four two-tone coasters with cork backing to protect your home surfaces.</p>
+          <div class="text-lg font-bold text-bark">$38.00 NZD</div>
+        </div>
+        <div class="p-6 pt-0">
+          <a href="#contact" class="block text-center bg-walnut text-white py-2.5 rounded hover:bg-coffee transition text-sm font-medium">Enquire to Buy</a>
+        </div>
+      </article>
+
+      <article class="bg-white rounded-lg overflow-hidden border border-line shadow-sm flex flex-col justify-between transition hover:shadow-lg hover:-translate-y-0.5">
+        <div class="p-6">
+          <div class="wood-swatch aspect-[4/3] rounded-md mb-4" style="--tone-a:#C79A73;--tone-b:#7A4E2E;" role="img" aria-label="Cherry wood cutting board"></div>
+          <h3 class="text-xl font-serif font-bold mb-2">Cherry Wood Cutting Board</h3>
+          <p class="text-sm text-coffee mb-4">A kitchen workhorse — dense cherry hardwood, gently domed edges, easy to grip and clean.</p>
+          <div class="text-lg font-bold text-bark">$65.00 NZD</div>
+        </div>
+        <div class="p-6 pt-0">
+          <a href="#contact" class="block text-center bg-walnut text-white py-2.5 rounded hover:bg-coffee transition text-sm font-medium">Enquire to Buy</a>
+        </div>
+      </article>
+
+      <article class="bg-white rounded-lg overflow-hidden border border-line shadow-sm flex flex-col justify-between transition hover:shadow-lg hover:-translate-y-0.5">
+        <div class="p-6">
+          <div class="wood-swatch aspect-[4/3] rounded-md mb-4" style="--tone-a:#BFA07C;--tone-b:#5A483C;" role="img" aria-label="Reclaimed pine wall shelf"></div>
+          <h3 class="text-xl font-serif font-bold mb-2">Reclaimed Pine Wall Shelf</h3>
+          <p class="text-sm text-coffee mb-4">Rustic floating shelf milled from reclaimed pine, with hidden-mount hardware included.</p>
+          <div class="text-lg font-bold text-bark">$95.00 NZD</div>
+        </div>
+        <div class="p-6 pt-0">
+          <a href="#contact" class="block text-center bg-walnut text-white py-2.5 rounded hover:bg-coffee transition text-sm font-medium">Enquire to Buy</a>
+        </div>
+      </article>
+
+      <article class="bg-white rounded-lg overflow-hidden border border-line shadow-sm flex flex-col justify-between transition hover:shadow-lg hover:-translate-y-0.5">
+        <div class="p-6">
+          <div class="wood-swatch aspect-[4/3] rounded-md mb-4" style="--tone-a:#9C6B47;--tone-b:#3A2A21;" role="img" aria-label="Walnut jewelry box"></div>
+          <h3 class="text-xl font-serif font-bold mb-2">Walnut Jewelry Box</h3>
+          <p class="text-sm text-coffee mb-4">A felt-lined keepsake box with brass hinges — a favourite for gifting.</p>
+          <div class="text-lg font-bold text-bark">$145.00 NZD</div>
+        </div>
+        <div class="p-6 pt-0">
+          <a href="#contact" class="block text-center bg-walnut text-white py-2.5 rounded hover:bg-coffee transition text-sm font-medium">Enquire to Buy</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ PROCESS / CRAFTSMANSHIP ============ -->
+  <section id="process" class="bg-sand py-20 border-y border-line">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-14">
+        <span class="text-xs uppercase tracking-widest text-amber font-semibold">The Art Behind Valley Woods</span>
+        <h2 class="text-3xl font-serif font-bold text-bark mt-2 mb-6">From Timber to Table</h2>
+        <p class="text-coffee leading-relaxed text-lg max-w-3xl mx-auto">
+          Every piece tells a story. From selecting local and reclaimed timber to hand-sanding
+          and applying organic oil finishes, no two items in our workshop are identical. We
+          believe in slow craftsmanship that brings the warmth of nature into your home.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div class="text-center">
+          <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-white border border-line flex items-center justify-center text-amber font-serif font-bold text-xl">1</div>
+          <h3 class="font-semibold text-walnut mb-1">Select Timber</h3>
+          <p class="text-sm text-coffee">Sourced from sustainable NZ suppliers and reclaimed stock.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-white border border-line flex items-center justify-center text-amber font-serif font-bold text-xl">2</div>
+          <h3 class="font-semibold text-walnut mb-1">Hand Shape</h3>
+          <p class="text-sm text-coffee">Cut, carved and sanded by hand in our Wellington workshop.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-white border border-line flex items-center justify-center text-amber font-serif font-bold text-xl">3</div>
+          <h3 class="font-semibold text-walnut mb-1">Finish Naturally</h3>
+          <p class="text-sm text-coffee">Food-safe mineral and beeswax oils bring out the grain.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-white border border-line flex items-center justify-center text-amber font-serif font-bold text-xl">4</div>
+          <h3 class="font-semibold text-walnut mb-1">Ship with Care</h3>
+          <p class="text-sm text-coffee">Carefully packaged and sent throughout New Zealand.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section id="testimonials" class="max-w-6xl mx-auto px-6 py-20">
+    <div class="text-center mb-12">
+      <span class="text-xs uppercase tracking-widest text-amber font-semibold">Kind Words</span>
+      <h2 class="text-3xl font-serif font-bold text-bark mt-2">What Customers Are Saying</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <blockquote class="bg-white p-6 rounded-lg border border-line shadow-sm">
+        <p class="text-coffee italic mb-4">"The walnut board is the centrepiece of every dinner party now. You can feel the care that went into it."</p>
+        <footer class="text-sm font-semibold text-walnut not-italic">— Hannah R., Wellington</footer>
+      </blockquote>
+      <blockquote class="bg-white p-6 rounded-lg border border-line shadow-sm">
+        <p class="text-coffee italic mb-4">"Ordered a custom shelf for an awkward space and it fit perfectly. Communication was great throughout."</p>
+        <footer class="text-sm font-semibold text-walnut not-italic">— Marcus T., Auckland</footer>
+      </blockquote>
+      <blockquote class="bg-white p-6 rounded-lg border border-line shadow-sm">
+        <p class="text-coffee italic mb-4">"Beautiful craftsmanship and it arrived so well packaged. Already planning my next order."</p>
+        <footer class="text-sm font-semibold text-walnut not-italic">— Priya S., Christchurch</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section id="faq" class="bg-sand py-20 border-y border-line">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="text-center mb-10">
+        <span class="text-xs uppercase tracking-widest text-amber font-semibold">Good to Know</span>
+        <h2 class="text-3xl font-serif font-bold text-bark mt-2">Frequently Asked Questions</h2>
+      </div>
+
+      <div class="space-y-4">
+        <details class="bg-white rounded-lg border border-line p-5" open>
+          <summary class="flex items-center justify-between font-semibold text-walnut">
+            How do I care for my wooden piece?
+            <svg class="faq-chevron w-5 h-5 text-amber transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <p class="text-sm text-coffee mt-3">Hand wash and dry immediately — never soak or microwave. Re-oil every 4–6 weeks with food-safe mineral oil or our board butter to keep the wood conditioned.</p>
+        </details>
+
+        <details class="bg-white rounded-lg border border-line p-5">
+          <summary class="flex items-center justify-between font-semibold text-walnut">
+            Can I order a custom size or wood species?
+            <svg class="faq-chevron w-5 h-5 text-amber transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <p class="text-sm text-coffee mt-3">Yes — most of our custom pieces start with the form at the bottom of this page. Tell us your dimensions, preferred wood and timeline and we'll follow up with options and pricing.</p>
+        </details>
+
+        <details class="bg-white rounded-lg border border-line p-5">
+          <summary class="flex items-center justify-between font-semibold text-walnut">
+            Where do you ship?
+            <svg class="faq-chevron w-5 h-5 text-amber transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <p class="text-sm text-coffee mt-3">We currently ship throughout New Zealand. International shipping is available on request for select items — get in touch before ordering.</p>
+        </details>
+
+        <details class="bg-white rounded-lg border border-line p-5">
+          <summary class="flex items-center justify-between font-semibold text-walnut">
+            What if my piece has a natural imperfection?
+            <svg class="faq-chevron w-5 h-5 text-amber transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <p class="text-sm text-coffee mt-3">Every board is one of a kind — small knots, mineral streaks and grain variation are part of the wood's story, not defects. We flag anything structural before it ships.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CUSTOM ORDER / CONTACT FORM ============ -->
+  <section id="contact" class="max-w-2xl mx-auto px-6 py-20">
+    <div class="text-center mb-10">
+      <span class="text-xs uppercase tracking-widest text-amber font-semibold">Get in Touch</span>
+      <h2 class="text-3xl font-serif font-bold text-bark mt-2">Want a Custom Piece?</h2>
+      <p class="text-coffee mt-2">Have a specific dimension or wood species in mind? Tell us about it.</p>
+    </div>
+
+    <!--
+      IMPORTANT: GitHub Pages only serves static files — it cannot process
+      this form on its own. The action below points at Formspree, a free
+      form backend. Replace YOUR_FORM_ID with your own ID (see README,
+      "Wiring up the contact form"). Until then this form will not send
+      anywhere.
+    -->
+    <form id="customOrderForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-5 bg-white p-8 rounded-lg border border-line shadow-sm">
+      <div>
+        <label for="name" class="block text-sm font-medium text-walnut mb-1">Your Name</label>
+        <input id="name" name="name" type="text" required placeholder="Jane Doe"
+          class="w-full px-4 py-2.5 border border-line rounded focus:outline-none focus:ring-2 focus:ring-amber bg-white">
+      </div>
+      <div>
+        <label for="email" class="block text-sm font-medium text-walnut mb-1">Email Address</label>
+        <input id="email" name="email" type="email" required placeholder="jane@example.com"
+          class="w-full px-4 py-2.5 border border-line rounded focus:outline-none focus:ring-2 focus:ring-amber bg-white">
+      </div>
+      <div>
+        <label for="message" class="block text-sm font-medium text-walnut mb-1">Tell us about your project</label>
+        <textarea id="message" name="message" rows="4" required placeholder="Dimensions, wood preference, timeline..."
+          class="w-full px-4 py-2.5 border border-line rounded focus:outline-none focus:ring-2 focus:ring-amber bg-white"></textarea>
+      </div>
+      <button type="submit" class="w-full bg-amber text-white py-3 rounded-md font-medium hover:bg-amberDk transition text-lg shadow">
+        Send Request
+      </button>
+      <p id="formStatus" class="text-sm text-center hidden" role="status"></p>
+    </form>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-walnut text-line/90">
+  <div class="max-w-6xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-4 gap-10 text-sm">
+    <div>
+      <div class="flex items-center gap-2 mb-3">
+        <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+          <circle cx="50" cy="50" r="48" fill="#FAF7F2"/>
+          <path d="M30 65 Q50 20 70 65 Q50 80 30 65Z" fill="#8C5E3C"/>
+          <line x1="50" y1="30" x2="50" y2="72" stroke="#FAF7F2" stroke-width="2"/>
+        </svg>
+        <span class="text-lg font-serif font-bold text-white">VALLEY WOODS</span>
+      </div>
+      <p class="text-line/70">Handcrafted wooden goods, sustainably made in Wellington, New Zealand.</p>
+    </div>
+
+    <div>
+      <h4 class="text-white font-semibold mb-3">Shop</h4>
+      <ul class="space-y-2 text-line/70">
+        <li><a href="#products" class="hover:text-white transition">Serving Boards</a></li>
+        <li><a href="#products" class="hover:text-white transition">Bowls</a></li>
+        <li><a href="#products" class="hover:text-white transition">Coasters</a></li>
+        <li><a href="#contact" class="hover:text-white transition">Custom Orders</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="text-white font-semibold mb-3">Company</h4>
+      <ul class="space-y-2 text-line/70">
+        <li><a href="#process" class="hover:text-white transition">Our Craft</a></li>
+        <li><a href="#testimonials" class="hover:text-white transition">Reviews</a></li>
+        <li><a href="#faq" class="hover:text-white transition">FAQ</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="text-white font-semibold mb-3">Follow Along</h4>
+      <div class="flex gap-3">
+        <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
+        </a>
+        <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="#" aria-label="Email" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10 py-6 text-center text-xs text-line/60">
+    <p>&copy; <span id="year">2026</span> Valley Woods. Handcrafted with care.</p>
+    <p class="mt-1">Sustainably Sourced Hardwoods, Wellington, New Zealand</p>
+  </div>
+</footer>
+
+<!-- Back to top -->
+<button id="toTop" type="button" aria-label="Back to top"
+  class="fixed bottom-6 right-6 w-11 h-11 rounded-full bg-walnut text-white shadow-lg flex items-center justify-center opacity-0 pointer-events-none transition-opacity">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+</button>
+
+<script>
+  // Mobile menu toggle
+  (function () {
+    var btn = document.getElementById('menuBtn');
+    var menu = document.getElementById('mobileMenu');
+    var iconOpen = document.getElementById('menuIconOpen');
+    var iconClose = document.getElementById('menuIconClose');
+
+    btn.addEventListener('click', function () {
+      var isOpen = !menu.classList.contains('hidden');
+      menu.classList.toggle('hidden');
+      iconOpen.classList.toggle('hidden');
+      iconClose.classList.toggle('hidden');
+      btn.setAttribute('aria-expanded', String(!isOpen));
+    });
+
+    // Close mobile menu after tapping a link
+    menu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        menu.classList.add('hidden');
+        iconOpen.classList.remove('hidden');
+        iconClose.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+
+  // Back-to-top button visibility + action
+  (function () {
+    var toTop = document.getElementById('toTop');
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 500) {
+        toTop.classList.remove('opacity-0', 'pointer-events-none');
+      } else {
+        toTop.classList.add('opacity-0', 'pointer-events-none');
+      }
+    });
+    toTop.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  })();
+
+  // Footer year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Progressive-enhancement submit for the contact form.
+  // Works with Formspree once YOUR_FORM_ID is set; otherwise it simply
+  // lets the browser submit the form normally (or does nothing useful
+  // until an action URL is configured — see README).
+  (function () {
+    var form = document.getElementById('customOrderForm');
+    var status = document.getElementById('formStatus');
+
+    form.addEventListener('submit', function (e) {
+      var action = form.getAttribute('action') || '';
+      if (action.indexOf('YOUR_FORM_ID') !== -1) {
+        return; // not configured yet — let README instructions guide setup
+      }
+      e.preventDefault();
+      var data = new FormData(form);
+      fetch(action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      }).then(function (response) {
+        status.classList.remove('hidden');
+        if (response.ok) {
+          status.textContent = 'Thanks — your request has been sent! We\'ll be in touch soon.';
+          status.className = 'text-sm text-center text-green-700';
+          form.reset();
+        } else {
+          status.textContent = 'Something went wrong sending your request. Please try again.';
+          status.className = 'text-sm text-center text-red-700';
+        }
+      }).catch(function () {
+        status.classList.remove('hidden');
+        status.textContent = 'Something went wrong sending your request. Please try again.';
+        status.className = 'text-sm text-center text-red-700';
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>
