@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miniature Wooden Jewelry Cabinet | Valley Woods</title>
+    <style>
+        /* Inherited Brand Styles & Typography */
+        :root {
+            --primary-color: #2c3e2b; /* Deep forest green */
+            --accent-color: #8b5a2b;  /* Warm timber brown */
+            --text-color: #333333;
+            --bg-light: #f9f8f6;
+            --border-color: #e5e2dd;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+        }
+
+        header, footer {
+            background-color: var(--bg-light);
+            padding: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        footer {
+            border-top: 1px solid var(--border-color);
+            margin-top: 50px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .nav-brand {
+            font-weight: bold;
+            letter-spacing: 1px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        /* Product Page Layout */
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        @media (min-width: 768px) {
+            .product-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* Multi-Image Gallery */
+        .gallery-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .main-image-placeholder {
+            width: 100%;
+            aspect-ratio: 4/5;
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            font-size: 1.1rem;
+            position: relative;
+        }
+
+        .thumbnail-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .thumbnail-placeholder {
+            aspect-ratio: 1/1;
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: border-color 0.2s;
+        }
+
+        .thumbnail-placeholder:hover {
+            border-color: var(--accent-color);
+        }
+
+        /* Product Details */
+        .product-details h1 {
+            color: var(--primary-color);
+            margin-top: 0;
+            font-size: 2rem;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            margin: 15px 0;
+        }
+
+        .meta-tag {
+            display: inline-block;
+            background-color: var(--bg-light);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            border: 1px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #1e2b1e;
+        }
+
+        /* Inquiry Form Section */
+        .inquiry-section {
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            border-radius: 6px;
+            margin-top: 40px;
+        }
+
+        .inquiry-section h2 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: inherit;
+        }
+
+        .form-group input[type="file"] {
+            padding: 5px 0;
+        }
+
+        .file-hint {
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="index.html" class="nav-brand">VALLEY WOODS</a>
+            <nav style="display: flex; gap: 20px;">
+                <a href="index.html" style="color: inherit; text-decoration: none;">Collection</a>
+                <a href="index.html#custom" style="color: inherit; text-decoration: none;">Custom Orders</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="product-grid">
+            
+            <!-- Multi-Image Gallery Placeholder -->
+            <div class="gallery-container">
+                <div class="main-image-placeholder" id="mainImage">
+                    <span>[ Primary Product Photo ]</span>
+                </div>
+                <div class="thumbnail-grid">
+                    <div class="thumbnail-placeholder" onclick="updatePlaceholder('Primary')">Front</div>
+                    <div class="thumbnail-placeholder" onclick="updatePlaceholder('Open Doors')">Open</div>
+                    <div class="thumbnail-placeholder" onclick="updatePlaceholder('Drawer Detail')">Drawers</div>
+                    <div class="thumbnail-placeholder" onclick="updatePlaceholder('Wood Grain Close-up')">Grain</div>
+                </div>
+            </div>
+
+            <!-- Product Details & Description -->
+            <div class="product-details">
+                <h1>Miniature Wooden Jewelry Cabinet</h1>
+                <div class="price">$145.00 NZD</div>
+                <span class="meta-tag">Condition: New</span>
+
+                <p>Enhance your home organization with this beautifully crafted, vintage-style tabletop wooden cabinet. Made from natural solid wood with a warm, smooth grain finish, this versatile piece features a classic double-door upper compartment with brass-finished side hinges and two pull-out drawers below.</p>
+                
+                <h3 style="color: var(--primary-color);">Product Features:</h3>
+                <ul>
+                    <li><strong>Premium Craftsmanship:</strong> Smoothly finished natural wood grain with sturdy brass-plated hinges.</li>
+                    <li><strong>Smart Storage:</strong> Two-door upper cabinet plus two independent bottom drawers.</li>
+                    <li><strong>Versatile Use:</strong> Ideal as a jewelry box, trinket organizer, watch cabinet, or unique desk organizer.</li>
+                </ul>
+
+                <p style="margin-top: 30px;">
+                    <a href="#inquiry-form" class="btn">Enquire About This Cabinet</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Dedicated Inquiry Form with Photo Upload -->
+        <section id="inquiry-form" class="inquiry-section">
+            <h2>Enquire to Buy / Request Variations</h2>
+            <p>Every piece is unique. Interested in purchasing this cabinet, or want to request a variation (different timber, custom dimensions)? Fill out the form below.</p>
+            
+            <form action="#" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required placeholder="e.g. Hannah R.">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="name@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Inquiry / Project Details</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="Let us know if you want the standard cabinet or variations like custom sizing or specific timber species..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="photos">Attach Additional Photos / References</label>
+                    <input type="file" id="photos" name="photos[]" multiple accept="image/*">
+                    <div class="file-hint">Have a specific design detail, space layout, or timber match in mind? Select multiple photos to upload with your inquiry.</div>
+                </div>
+                <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">Submit Inquiry</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container" style="text-align: center; font-size: 0.9rem; color: #666;">
+            <p>© 2026 Valley Woods. Handcrafted with care in Wellington, New Zealand.</p>
+        </div>
+    </footer>
+
+    <script>
