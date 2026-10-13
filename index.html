@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valley Woods | Handcrafted Small-Batch Woodenware</title>
+    <style>
+        /* Base Reset & Typography */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #333333;
+            line-height: 1.6;
+            background-color: #fcfbf9;
+        }
+
+        /* Fixed Navigation Header Layout */
+        .main-header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #eae6e1;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+        .header-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .logo-img {
+            height: auto;
+            width: 180px; /* Adjust this value to make your logo larger or smaller */
+            max-height: 55px;
+            object-fit: contain;
+            display: block;
+        }
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+        .main-nav a {
+            text-decoration: none;
+            color: #555555;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+        .main-nav a:hover {
+            color: #8c6239;
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            color: #222222;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: #666666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Products Grid Section */
+        .shop-section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px 80px;
+        }
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #eae6e1;
+            padding-bottom: 10px;
+            color: #222222;
+        }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 40px;
+        }
+        .product-card {
+            background: #ffffff;
+            border: 1px solid #eae6e1;
+            border-radius: 4px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+        }
+        .product-tag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #8c6239;
+            color: #ffffff;
+            font-size: 0.75rem;
+            padding: 3px 8px;
+            border-radius: 2px;
+            text-transform: uppercase;
+        }
+        .product-card h3 {
+            font-size: 1.2rem;
+            margin: 15px 0 5px;
+            color: #222222;
+        }
+        .product-meta {
+            font-size: 0.9rem;
+            color: #666666;
+            margin-bottom: 15px;
+        }
+        .product-price {
+            font-weight: 600;
+            color: #222222;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        .placeholder-image {
+            background-color: #f3f0ec;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888888;
+            font-size: 0.9rem;
+            border-radius: 2px;
+        }
+        .btn {
+            display: inline-block;
+            background: #4a3b32;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+        .btn:hover {
+            background: #2d241e;
+        }
+
+        /* About & Workbench Section */
+        .about-section {
+            background-color: #f3f0ec;
+            padding: 80px 20px;
+        }
+        .about-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .about-section p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            color: #444444;
+        }
+
+        /* Care Guide Section */
+        .care-section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+        .care-section ul {
+            list-style-position: inside;
+            margin-top: 20px;
+        }
+        .care-section li {
+            margin-bottom: 15px;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background-color: #ffffff;
+            border-top: 1px solid #eae6e1;
+            padding: 80px 20px;
+        }
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        .radio-group {
+            margin: 10px 0 20px;
+        }
+        .radio-option {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .radio-option input {
+            margin-right: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background: #4a3b32;
+            color: #ffffff;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Breakdowns */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- REPAIRED MAIN HEADER SECTION -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="#" class="logo-link">
+                <!-- Replace 'images/logo.png' with your preferred relative file path if different -->
+                <img src="images/logo.png" alt="Valley Woods Logo" class="logo-img">
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#shop">Shop</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#care">Care Guide</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <h1>Finely Crafted, Small-Batch Woodenware</h1>
+        <p>Sustainably sourced timber items, carefully shaped and hand-finished in our local workshop. Built to be used and passed down generations.</p>
+    </section>
+
+    <!-- SHOP SECTION WITH STABLE PRODUCTS GRID -->
+    <section id="shop" class="shop-section">
+        <h2 class="section-title">The Current Batch</h2>
+        <div class="products-grid">
+            
+            <!-- Product 1 -->
+            <div class="product-card">
+                <span class="product-tag">Only 3 Left</span>
+                <div class="placeholder-image">Premium Solid Wood Garden Dibble Image</div>
+                <h3>Premium Solid Wood Garden Dibble</h3>
+                <div class="product-meta">Vitex • Hard Wax Finish</div>
+                <div class="product-price">$14</div>
+                <button class="btn">Add to Cart</button>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="placeholder-image">Live-Edge Serving Board Image</div>
+                <h3>Live-Edge Serving Board</h3>
+                <div class="product-meta">Black Walnut</div>
+                <div class="product-price">$145</div>
+                <a href="#" class="btn">View Details</a>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="placeholder-image">Hand-Carved Salad Servers Image</div>
+                <h3>Hand-Carved Salad Servers</h3>
+                <div class="product-meta">Wild Cherry Wood • Beeswax Finish</div>
+                <div class="product-price">$85</div>
+                <button class="btn">Add to Cart</button>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <span class="product-tag">New Drop</span>
+                <div class="placeholder-image">Magnetic Salt Cellar Image</div>
+                <h3>Magnetic Salt Cellar</h3>
+                <div class="product-meta">Hard Maple • Swivel Lid</div>
+                <div class="product-price">$55</div>
+                <button class="btn">Add to Cart</button>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card">
+                <div class="placeholder-image">Turned Catchall Tray Image</div>
+                <h3>Turned Catchall Tray</h3>
+                <div class="product-meta">Spalted Birch • Satin Finish</div>
+                <div class="product-price">$75</div>
+                <button class="btn">Add to Cart</button>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product-card">
+                <div class="placeholder-image">Magnetic Knife Rack Image</div>
+                <h3>Magnetic Knife Rack (40cm)</h3>
+                <div class="product-meta">Smoked Oak • Heavy Duty Magnets</div>
+                <div class="product-price">$120</div>
+                <button class="btn">Add to Cart</button>
+            </div>
+
+            <!-- Product 7 -->
+            <div class="product-card">
+                <div class="placeholder-image">Minimalist Desk Organizer Image</div>
+                <h3>Minimalist Desk Organizer</h3>
+                <div class="product-meta">Walnut & Brass Accents</div>
+                <div class="product-price">$95</div>
+                <button class="btn">Add to Cart</button>
+            </div>
+
+            <!-- Product 8 -->
+            <div class="product-card">
+                <div class="placeholder-image">Hand-Whittled Coffee Scoop Image</div>
+                <h3>Hand-Whittled Coffee Scoop</h3>
+                <div class="product-meta">Plum Wood • 1-Tablespoon Capacity</div>
+                <div class="product-price">$40</div>
+                <button class="btn">Add to Cart</button>
+            </div>
+
+            <!-- Product 9 -->
+            <div class="product-card">
+                <div class="placeholder-image">Mid-Century Plant Riser Image</div>
+                <h3>Mid-Century Plant Riser</h3>
+                <div class="product-meta">Ash Wood • Mortise Joinery</div>
+                <div class="product-price">$110</div>
+                <button class="btn">Add to Cart</button>
+            </div>
+
+            <!-- Product 10 -->
+            <div class="product-card">
+                <span class="product-tag">Low Stock</span>
+                <div class="placeholder-image">Long-Handle Bread Board Image</div>
+                <h3>Long-Handle Bread Board</h3>
+                <div class="product-meta">Beech Wood • Traditional Peg Hole</div>
+                <div class="product-price">$130</div>
+                <button class="btn">Add to Cart</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <h2 class="section-title">Behind the Grain</h2>
+            <p><strong>Inside the Valley Woods workshop...</strong> From the Workbench</p>
+            <p>Welcome! I'm the maker behind Valley Woods. My philosophy is simple: celebrate what mass production ignores. Industrial manufacturing treats timber imperfections as flaws, but I see them as a fingerprint of the natural world.</p>
+            <p>Every item in this collection is individually shaped in my workshop using local, sustainably sourced timber and rescued offcuts. By pairing traditional hand tools with clean, contemporary design, I forge lasting, practical wares that tell a story from the forest straight to your home.</p>
+        </div>
+    </section>
+
+    <!-- CARE GUIDE SECTION -->
+    <section id="care" class="care-section">
+        <h2 class="section-title">Wood Care Guide</h2>
+        <p>Solid timber lives and breathes. Follow these guidelines to ensure your items stay beautiful for a lifetime:</p>
+        <ul>
+            <li><strong>Hand Wash Only:</strong> Never submerge your boards in water or place them in a dishwasher. Wipe clean with mild soap and warm water.</li>
+            <li><strong>Dry Instantly:</strong> Stand your boards upright on their edge to dry evenly on both sides. This prevents warping.</li>
+            <li><strong>Oil Frequently:</strong> When the timber looks dry or dull, rub a generous layer of food-safe mineral oil or wood wax over the surface. Let sit for 20 minutes and buff off the excess.</li>
+        </ul>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <h2 class="section-title">Contact Us</h2>
+            <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Message sent!');">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email Address</label>
+                    <input type="email" id="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label>What are you inquiring about?</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="inquiry" value="general" checked> General Question
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="inquiry" value="custom"> Custom Commission Order
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="inquiry" value="shipping"> Shipping Query
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" class="form-control" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Valley Woods. Handcrafted with care.</p>
+    </footer>
+
+</body>
+</html>
