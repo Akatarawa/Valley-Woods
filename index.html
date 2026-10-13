@@ -111,6 +111,24 @@
     overflow: hidden; /* Prevents contents from spilling out */
     box-sizing: border-box;
 }
+        /* 2. Create a constrained box for the image container */
+.product-image-wrapper {
+    width: 100%;
+    height: 220px;       /* Sets a fixed height for all product photos */
+    border-radius: 6px;
+    overflow: hidden;    /* Crops anything outside the 220px boundary */
+    margin-bottom: 15px;
+    background-color: #f7f7f7;
+}
+
+/* 3. Force the image to fit the container perfectly */
+.product-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;   /* Centers and scales the photo safely without warping proportions */
+    object-position: center;
+}
         .product-tag {
             position: absolute;
             top: 15px;
